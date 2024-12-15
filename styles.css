@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'Title-Font';
-    src: url('fonts/Palmore\ Regular.ttf');
+    src: url('Fonts/Palmore\ Regular.ttf');
   }
   @font-face {
     font-family: 'Body-Font';
-    src: url('fonts/SK\ Concretica\ Trial.ttf');
+    src: url('Fonts/SK\ Concretica\ Trial.ttf');
   }
 /* General Reset */
 * {
