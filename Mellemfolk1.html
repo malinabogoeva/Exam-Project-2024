@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <ol class="top-nav">
-            <li class="logo">Aarhus Connect</li>
+            <li class="logo"> Aarhus Connect</li>
             <li class="desktop-menu">
-                <a class="nav-link" href="Home.html">Home</a>
+                <!-- Navigation Links -->
+                <a class="nav-link" href="index.html">Home</a>
                 <a class="nav-link" href="Bazar-Vest.html">Groceries</a>
                 <a class="nav-link" href="Street-Food1.html">Eat Out</a>
                 <a class="nav-link" href="Mellemfolk1.html">Socialize</a>
@@ -20,9 +22,11 @@
                 <a class="nav-link" href="#">Reviews</a>
             </li>
         </ol>
+        <!-- Overlay for mobile menu -->
         <div class="overlay" id="overlay" onclick="closeMenu(event)">
             <div class="menu" onclick="event.stopPropagation()">
-                <a href="Home.html">Home</a>
+                <!-- Mobile Navigation Links -->
+                <a href="index.html">Home</a>
                 <a href="Bazar-Vest.html">Groceries</a>
                 <a href="Street-Food1.html">Eat Out</a>
                 <a href="Mellemfolk1.html">Socialize</a>
@@ -30,14 +34,17 @@
                 <a href="#">Reviews</a>
             </div>
         </div>
+        <!-- Burger Menu Icon for Mobile -->
         <div class="burger-menu" onclick="toggleMenu()">&#9776;</div>
     </header>
     <script>
+        // Function to toggle the overlay menu
         function toggleMenu() {
             var overlay = document.getElementById("overlay");
             overlay.classList.toggle("show");
         }
 
+        // Close the menu if clicked outside
         function closeMenu(event) {
             if (event.target === document.getElementById("overlay")) {
                 document.getElementById("overlay").classList.remove("show");
@@ -48,6 +55,7 @@
     overlay.classList.toggle('show');
 });
     </script>
+    <!-- Info Card Section -->
   <div class="card-container">
     <div class="info-card" style="background-color:#FFE496;">
         <div class="info-card-image">
@@ -60,11 +68,13 @@ Where community, coffee, and culture come together.</p>
             <button class="info-card-button">SEE ON MAP <img src="icons/arrow-sm-right.png" alt="Right Arrow" class="icon right-arrow"></button>
         </div>
     </div>
+    <!-- Carousel Section -->
     <section class="carousel-1">
         <section class="carousel-container-1">
             <div class="carousel-header-1">
                 <h2 >Clubs!</h2>
                 <div class="carousel-icons-1">
+                    <!-- Left and Right Arrows for Carousel -->
                     <img src="icons/arrow-sm-left.png" alt="Left Arrow" class="icon left-arrow">
                     <img src="icons/arrow-sm-right.png" alt="Right Arrow" class="icon right-arrow">
                 </div>
@@ -73,11 +83,12 @@ Where community, coffee, and culture come together.</p>
         </section>
         
         <div class="scroll-container-1">
+            <!-- Carousel Items for Clubs -->
             <div class="carousel-item-1" >
                     <h3>
                     Sketch & Sip: Art in a Social Setting
                     </h3>
-                    <p>Bi-weekly, every ThursdayM</p>
+                    <p>Bi-weekly, every Thursday</p>
             </div>
             <div class="carousel-item-1" style="background-color: #FFD866;">
                     <h3>
@@ -98,6 +109,7 @@ Where community, coffee, and culture come together.</p>
             </div>
             <!-- Add more carousel-item divs as needed -->
             <script>
+                // Filtering the carousel items based on category
                 const filterButtons = document.querySelectorAll('.filter-btn');
                 const carouselItems = document.querySelectorAll('.carousel-item-1');
             
@@ -118,16 +130,20 @@ Where community, coffee, and culture come together.</p>
                 });
             </script>
         </div>
+        <!-- View More Button -->
         <div class="button-container">
         <button class="view-more">VIEW MORE <img src="icons/arrow-sm-right.png" alt="Right Arrow" class="icon right-arrow"></button>
     </div>
     </section>
     </div>
+    <!-- About Section -->
     <section class="about-section">
         <h1 class="about-title">About Mellemfolk</h1>
         <p class="about-text">
-            Café Mellemfolk is a unique café in Aarhus that combines a relaxed atmosphere with a focus on cultural diversity and social causes. With an emphasis on sustainability, the café serves Fairtrade coffee, organic teas, and local, vegan-friendly snacks. The space encourages community engagement, hosting events such as open discussions, workshops, and live performances. It's more than just a café—it's a hub for like-minded individuals to connect and support global initiatives.        </p>
+            Café Mellemfolk is a unique café in Aarhus that combines a relaxed atmosphere with a focus on cultural diversity and social causes. With an emphasis on sustainability, the café serves Fairtrade coffee, organic teas, and local, vegan-friendly snacks. The space encourages community engagement, hosting events such as open discussions, workshops, and live performances. It's more than just a café—it's a hub for like-minded individuals to connect and support global initiatives.        
+        </p>
     </section>
+    <!-- Tips Section -->
     <div class="tips-section">
         <h2>Tips!</h2>
         <p><strong>Plan Your Visit:</strong> Explore Before You Order: Walk around and check all the food stands before deciding. There’s something for every taste!</p>
@@ -135,6 +151,7 @@ Where community, coffee, and culture come together.</p>
         <p><strong>Bring Cash:</strong> Seating Strategy: Find a table before ordering, especially during busy times.</p>
         <p><strong>Try the Food:</strong> Eco-Friendly Practices: Support sustainability by properly sorting your waste into the provided bins.</p>
     </div>
+    <!-- Find Mellemfolk Section -->
     <div class="find-street-food">
     <h2>Find Mellemfolk</h2>
     <div class="infocontainer">
@@ -152,6 +169,7 @@ Where community, coffee, and culture come together.</p>
         <img src="images/mellemfolk-1.png" alt="Street Food">
     </div>
 </div>
+        <!-- Footer Section -->
         <footer class="footer">
             <div class="footer-logo">
               <h1>AARHUS</h1>
@@ -171,3 +189,5 @@ Where community, coffee, and culture come together.</p>
               <button>EXPLORE NOW &#x2191;</button>
             </div>
           </footer>
+</body>
+</html>
