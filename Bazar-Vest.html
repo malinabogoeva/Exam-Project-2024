@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarhus Connect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <ol class="top-nav">
+            <li class="logo">Aarhus Connect</li>
+            <li class="desktop-menu">
+                <a class="nav-link" href="Home.html">Home</a>
+                <a class="nav-link" href="Bazar-Vest.html">Groceries</a>
+                <a class="nav-link" href="Street-Food1.html">Eat Out</a>
+                <a class="nav-link" href="Mellemfolk1.html">Socialize</a>
+                <a class="nav-link" href="#">Calendar</a>
+                <a class="nav-link" href="#">Reviews</a>
+            </li>
+        </ol>
+        <div class="overlay" id="overlay" onclick="closeMenu(event)">
+            <div class="menu" onclick="event.stopPropagation()">
+                <a href="Home.html">Home</a>
+                <a href="Bazar-Vest.html">Groceries</a>
+                <a href="Street-Food1.html">Eat Out</a>
+                <a href="Mellemfolk1.html">Socialize</a>
+                <a href="#">Calendar</a>
+                <a href="#">Reviews</a>
+            </div>
+        </div>
+        <div class="burger-menu" onclick="toggleMenu()">&#9776;</div>
+    </header>
+    <script>
+        function toggleMenu() {
+            var overlay = document.getElementById("overlay");
+            overlay.classList.toggle("show");
+        }
+
+        function closeMenu(event) {
+            if (event.target === document.getElementById("overlay")) {
+                document.getElementById("overlay").classList.remove("show");
+            }
+        }
+        document.querySelector('.burger-icon').addEventListener('click', () => {
+    const overlay = document.querySelector('.overlay');
+    overlay.classList.toggle('show');
+});
+    </script>
+  <div class="card-container">
+    <div class="info-card">
+        <div class="info-card-image">
+            <img src="images/2024-11-30_15.16.51.jpg" alt="Bazar Vest">
+        </div>
+        <div class="info-card-content">
+            <h2 class="info-card-title">Groceries At<br>Bazar Vest</h2>
+            <p class="info-card-text">
+                Your guide to sourcing international ingredients and local delights in Aarhus.
+            </p>
+            <button class="info-card-button">SEE ON MAP <img src="icons/arrow-sm-right.png" alt="Right Arrow" class="icon right-arrow" ></button>
+        </div>
+    </div>
+    <section class="carousel-1">
+        <section class="carousel-container-1">
+            <div class="carousel-header-1">
+                <h2 >Places!</h2>
+                <div class="carousel-icons-1">
+                    <img src="icons/arrow-sm-left.png" alt="Left Arrow" class="icon left-arrow">
+                    <img src="icons/arrow-sm-right.png" alt="Right Arrow" class="icon right-arrow">
+                </div>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn" data-category="all">All</button>
+                <button class="filter-btn" data-category="spices">Spices</button>
+                <button class="filter-btn" data-category="Food & Snacks">Food & Snacks</button>
+                <button class="filter-btn" data-category="Bakery">Bakery</button>
+            </div>
+            <!-- Carousel content here -->
+        </section>
+        
+        <div class="scroll-container-1">
+            <div class="carousel-item-1" data-category="spices">
+                <div class="carousel-photo" >
+                    <img src="images/spices.jpg" alt="Spices">
+                </div>
+                    <h3>
+                    Spice Heaven
+                    </h3>
+                    <p>category:spices</p>
+                    <p>Mon-Sat: 10:00 AM – 6:00 PM</p>
+            </div>
+            <div class="carousel-item-1" style="background-color: #FFD866;">
+                <div class="carousel-photo">
+                    <img src="images/olives.jpg" alt="Olive picture">
+                </div>
+                    <h3>
+                    Olives & More
+                    </h3>
+                    <p>category:Food & Snacks</p>
+                    <p>Mon-Sat: 10:00 AM – 6:00 PM</p>
+            </div>
+            <div class="carousel-item-1" style="background-color: #B9E0FE;" data-category="Bakery">
+                <div class="carousel-photo">
+                    <img src="images/French.jpg" alt="French food">
+                </div>
+                    <h3>
+                    Sweet Bites
+                    </h3>
+                    <p>category:Bakery</p>
+                    <p>Mon-Sat: 10:00 AM – 6:00 PM</p>
+            </div>
+                     <div class="carousel-item-1" style="background-color: #F0FCDF;" data-category="Food & Snacks">
+                <div class="carousel-photo">
+                    <img src="images/food.jpg" alt="French food">
+                </div>
+                    <h3>
+                    Bella Italia
+                    </h3>
+                    <p>category:Groceries</p>
+                    <p>Mon-Sat: 10:00 AM – 6:00 PM</p>
+            </div>
+            <!-- Add more carousel-item divs as needed -->
+            <script>
+                const filterButtons = document.querySelectorAll('.filter-btn');
+                const carouselItems = document.querySelectorAll('.carousel-item-1');
+            
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const category = button.getAttribute('data-category');
+            
+                        carouselItems.forEach(item => {
+                            const itemCategory = item.getAttribute('data-category');
+            
+                            if (category === 'all' || itemCategory === category) {
+                                item.style.display = 'block';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            </script>
+        </div>
+        <div class="button-container">
+        <button class="view-more">VIEW MORE <img src="icons/arrow-sm-right.png" alt="Right Arrow" class="icon right-arrow"></button>
+    </div>
+    </section>
+    </div>
+    <section class="about-section">
+        <h1 class="about-title">About Bazar Vest</h1>
+        <p class="about-text">
+            Bazaar Vest is a vibrant multicultural marketplace in Aarhus, known for its rich array of international foods, spices, and unique goods. It’s a haven for food lovers and culture enthusiasts alike, offering everything from fresh produce and halal meats to handmade crafts. Whether you're hunting for authentic ingredients or experiencing diverse flavors, Bazaar Vest provides an exciting glimpse into the city’s cultural diversity. Don’t miss the chance to explore its bustling stalls and connect with its welcoming vendors.
+        </p>
+    </section>
+    <div class="tips-section">
+        <h2>Tips!</h2>
+        <p><strong>Plan Your Visit:</strong> Weekends are usually busier, so visit on weekday mornings for a quieter experience.</p>
+        <p><strong>Explore the Stalls:</strong> Don’t stick to just one area—there’s a treasure trove of fresh produce, spices, and unique items across the bazaar.</p>
+        <p><strong>Bring Cash:</strong> While some stalls accept cards, cash is often preferred.</p>
+        <p><strong>Try the Food:</strong> The small eateries and bakeries inside are great for tasting authentic international dishes.</p>
+    </div>
+    <div class="find-street-food">
+    <h2>Find Bazar Vest</h2>
+    <div class="infocontainer">
+        <div class="infocard address">
+            <p>Edwin Rahrs Vej 32, 8220 Brabrand</p>
+        </div>
+        <div class="infocard phone">
+            <p>+45 86 25>42 11</p>
+        </div>
+        <div class="infocard email">
+            <p>ao@olavdelinde.dk</p>
+        </div>
+    </div>
+    <div class="imagecontainer">
+        <img src="images/bazar-vest.jpg" alt="Street Food">
+    </div>
+</div>
+        <footer class="footer">
+            <div class="footer-logo">
+              <h1>AARHUS</h1>
+              <h1>CONNECT</h1>
+            </div>
+            <div class="footer-links">
+              <a href="#">Mellemfolk</a>
+              <a href="#">Bazar Vest</a>
+              <a href="#">Street Food</a>
+            </div>
+            <div class="footer-contact">
+              <p>OUR CONTACTS:</p>
+              <p>Phone Number: +45 7373902</p>
+              <p>Email: aarhusconnect@gmail.com</p>
+            </div>
+            <div class="footer-button">
+              <button>EXPLORE NOW &#x2191;</button>
+            </div>
+          </footer>

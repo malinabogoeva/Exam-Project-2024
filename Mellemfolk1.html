@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarhus Connect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <ol class="top-nav">
+            <li class="logo">Aarhus Connect</li>
+            <li class="desktop-menu">
+                <a class="nav-link" href="Home.html">Home</a>
+                <a class="nav-link" href="Bazar-Vest.html">Groceries</a>
+                <a class="nav-link" href="Street-Food1.html">Eat Out</a>
+                <a class="nav-link" href="Mellemfolk1.html">Socialize</a>
+                <a class="nav-link" href="#">Calendar</a>
+                <a class="nav-link" href="#">Reviews</a>
+            </li>
+        </ol>
+        <div class="overlay" id="overlay" onclick="closeMenu(event)">
+            <div class="menu" onclick="event.stopPropagation()">
+                <a href="Home.html">Home</a>
+                <a href="Bazar-Vest.html">Groceries</a>
+                <a href="Street-Food1.html">Eat Out</a>
+                <a href="Mellemfolk1.html">Socialize</a>
+                <a href="#">Calendar</a>
+                <a href="#">Reviews</a>
+            </div>
+        </div>
+        <div class="burger-menu" onclick="toggleMenu()">&#9776;</div>
+    </header>
+    <script>
+        function toggleMenu() {
+            var overlay = document.getElementById("overlay");
+            overlay.classList.toggle("show");
+        }
+
+        function closeMenu(event) {
+            if (event.target === document.getElementById("overlay")) {
+                document.getElementById("overlay").classList.remove("show");
+            }
+        }
+        document.querySelector('.burger-icon').addEventListener('click', () => {
+    const overlay = document.querySelector('.overlay');
+    overlay.classList.toggle('show');
+});
+    </script>
+  <div class="card-container">
+    <div class="info-card" style="background-color:#FFE496;">
+        <div class="info-card-image">
+            <img src="images/mellemfolk.png" alt="Bazar Vest">
+        </div>
+        <div class="info-card-content">
+            <h2 class="info-card-title">Socialize <br>at Mellemfollk</h2>
+            <p class="info-card-text">
+Where community, coffee, and culture come together.</p>
+            <button class="info-card-button">SEE ON MAP <img src="icons/arrow-sm-right.png" alt="Right Arrow" class="icon right-arrow"></button>
+        </div>
+    </div>
+    <section class="carousel-1">
+        <section class="carousel-container-1">
+            <div class="carousel-header-1">
+                <h2 >Clubs!</h2>
+                <div class="carousel-icons-1">
+                    <img src="icons/arrow-sm-left.png" alt="Left Arrow" class="icon left-arrow">
+                    <img src="icons/arrow-sm-right.png" alt="Right Arrow" class="icon right-arrow">
+                </div>
+            </div>
+            <!-- Carousel content here -->
+        </section>
+        
+        <div class="scroll-container-1">
+            <div class="carousel-item-1" >
+                    <h3>
+                    Sketch & Sip: Art in a Social Setting
+                    </h3>
+                    <p>Bi-weekly, every ThursdayM</p>
+            </div>
+            <div class="carousel-item-1" style="background-color: #FFD866;">
+                    <h3>
+                     Aarhus Entrepreneurs 
+                    </h3>
+                    <p>Monthly</p> 
+            </div>
+            <div  class="carousel-item-1" style="background-color: #B9E0FE;">
+                    <h3>
+                    Sketch & Sip: Art in a Social Setting
+                    </h3>
+                    <p>Bi-weekly, every Friday</p>
+            </div>
+            <div class="carousel-item-1" style="background-color: #DFF8BD;">
+                    <h3>
+                        Aarhus Language Exchange             </h3>
+                    <p>	Weekly, every Monday</p>
+            </div>
+            <!-- Add more carousel-item divs as needed -->
+            <script>
+                const filterButtons = document.querySelectorAll('.filter-btn');
+                const carouselItems = document.querySelectorAll('.carousel-item-1');
+            
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const category = button.getAttribute('data-category');
+            
+                        carouselItems.forEach(item => {
+                            const itemCategory = item.getAttribute('data-category');
+            
+                            if (category === 'all' || itemCategory === category) {
+                                item.style.display = 'block';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            </script>
+        </div>
+        <div class="button-container">
+        <button class="view-more">VIEW MORE <img src="icons/arrow-sm-right.png" alt="Right Arrow" class="icon right-arrow"></button>
+    </div>
+    </section>
+    </div>
+    <section class="about-section">
+        <h1 class="about-title">About Mellemfolk</h1>
+        <p class="about-text">
+            Café Mellemfolk is a unique café in Aarhus that combines a relaxed atmosphere with a focus on cultural diversity and social causes. With an emphasis on sustainability, the café serves Fairtrade coffee, organic teas, and local, vegan-friendly snacks. The space encourages community engagement, hosting events such as open discussions, workshops, and live performances. It's more than just a café—it's a hub for like-minded individuals to connect and support global initiatives.        </p>
+    </section>
+    <div class="tips-section">
+        <h2>Tips!</h2>
+        <p><strong>Plan Your Visit:</strong> Explore Before You Order: Walk around and check all the food stands before deciding. There’s something for every taste!</p>
+        <p><strong>Explore the Stalls:</strong> Timing is Key: Visit during off-peak hours for shorter lines, or come in the evening for a lively atmosphere.</p>
+        <p><strong>Bring Cash:</strong> Seating Strategy: Find a table before ordering, especially during busy times.</p>
+        <p><strong>Try the Food:</strong> Eco-Friendly Practices: Support sustainability by properly sorting your waste into the provided bins.</p>
+    </div>
+    <div class="find-street-food">
+    <h2>Find Mellemfolk</h2>
+    <div class="infocontainer">
+        <div class="infocard address">
+            <p>8000 Aarhus C</p>
+        </div>
+        <div class="infocard phone">
+            <p>+45 86 2542 11</p>
+        </div>
+        <div class="infocard email">
+            <p>jlo@ms.dk</p>
+        </div>
+    </div>
+    <div class="imagecontainer">
+        <img src="images/mellemfolk-1.png" alt="Street Food">
+    </div>
+</div>
+        <footer class="footer">
+            <div class="footer-logo">
+              <h1>AARHUS</h1>
+              <h1>CONNECT</h1>
+            </div>
+            <div class="footer-links">
+              <a href="#">Mellemfolk</a>
+              <a href="#">Bazar Vest</a>
+              <a href="#">Street Food</a>
+            </div>
+            <div class="footer-contact">
+              <p>OUR CONTACTS:</p>
+              <p>Phone Number: +45 7373902</p>
+              <p>Email: aarhusconnect@gmail.com</p>
+            </div>
+            <div class="footer-button">
+              <button>EXPLORE NOW &#x2191;</button>
+            </div>
+          </footer>

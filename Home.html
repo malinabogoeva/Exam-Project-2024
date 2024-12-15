@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarhus Connect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <ol class="top-nav">
+            <li class="logo">Aarhus Connect</li>
+            <li class="desktop-menu">
+                <a class="nav-link" href="Home.html">Home</a>
+                <a class="nav-link" href="Bazar-Vest.html">Groceries</a>
+                <a class="nav-link" href="Street-Food1.html">Eat Out</a>
+                <a class="nav-link" href="Mellemfolk1.html">Socialize</a>
+                <a class="nav-link" href="#">Calendar</a>
+                <a class="nav-link" href="#">Reviews</a>
+            </li>
+        </ol>
+        <div class="overlay" id="overlay" onclick="closeMenu(event)">
+            <div class="menu" onclick="event.stopPropagation()">
+                <a href="Home.html">Home</a>
+                <a href="Bazar-Vest.html">Groceries</a>
+                <a href="Street-Food1.html">Eat Out</a>
+                <a href="Mellemfolk1.html">Socialize</a>
+                <a href="#">Calendar</a>
+                <a href="#">Reviews</a>
+            </div>
+        </div>
+        <div class="burger-menu" onclick="toggleMenu()">&#9776;</div>
+    </header>
+    <main>
+        <section class="hero">
+            <h2>Discover the Heart of Aarhus</h2>
+            <div class="hero-image-wrapper">
+                <img src="images/street-food-1.jpg" alt="Aarhus Street Food">
+            </div>
+            <p>Welcome to your guide to the hidden gems and cultural hotspots of Aarhus. Whether you're a visitor, student, or new resident, our website invites you to explore the vibrant tapestry of this city.
+                From the bustling flavors of Bazaar Vest to the cozy charm of Café Mellemfolk and the dynamic scene at Aarhus Street Food, there's a world of experiences waiting for you. Dive into Aarhus’s multicultural pulse and make unforgettable connections.</p>
+        </section>
+    </main>
+    <section class="card">
+        <h2>We feature</h2>
+        <div class="features-container">
+            <div class="Bazar-vest">
+                <h3>Bazar Vest</h3>
+                <p>A lively food market offering a diverse range of international cuisines served from colorful stalls and food trucks.</p>
+            </div>
+            <div class="Street-food">
+                <h3>Street Food</h3>
+                <p>A bustling multicultural marketplace featuring exotic spices, fresh produce, and unique goods from around the world.</p>
+            </div>
+            <div class="Mellemfolk">
+                <h3>Mellemfolk</h3>
+                <p>A cozy café run by volunteers, perfect for enjoying coffee, engaging in meaningful conversations.</p>
+            </div>
+        </div>
+        <img src="images/We-feauture.png" alt="Market with fresh produce">
+    </section>
+
+    <section class="carousel">
+        <section class="carousel-container">
+            <div class="carousel-header">
+                <h2>5 star reviews</h2>
+                <div class="carousel-icons">
+                    <img src="icons/arrow-sm-left.png" alt="Left Arrow" class="icon left-arrow" >
+                    <img src="icons/arrow-sm-right.png" alt="Right Arrow" class="icon right-arrow">
+                </div>
+            </div>
+            <!-- Carousel content here -->
+        </section>
+        
+        <div class="scroll-container">
+            <div class="carousel-item">
+                <h3>Perfect for Newcomers</h3>
+                <p>
+                    As an international student, I found this website incredibly helpful. It made exploring Aarhus's hidden spots, like Bazaar Vest and Café Mellemfolk, so much easier. The interactive map and event calendar are fantastic!
+                </p>
+                <div class="reviewer">
+                    <span class="avatar" style="background-color: #FFC0CB;"></span>
+                    <p>Mike Smith</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <h3>Perfect for Exploring</h3>
+                <p>
+                    This app is perfect for finding hidden gems like Bazaar Vest and Mellemfolk. The interface is easy to use, and the insights it provides are excellent!
+                </p>
+                <div class="reviewer">
+                    <span class="avatar" style="background-color: #FFD700;"></span>
+                    <p>Mike Smith</p>
+                </div>
+            </div>
+            <!-- Add more carousel-item divs as needed -->
+        </div>
+        <div class="button-container">
+        <button class="view-more">VIEW MORE &rarr;</button>
+    </div>
+    </section>
+    <script>
+    const track = document.querySelector('.carousel-track');
+    const items = Array.from(track.children);
+    const prevButton = document.querySelector('.carousel-btn.prev');
+    const nextButton = document.querySelector('.carousel-btn.next');
+    
+    let currentIndex = 0;
+    
+    // Move carousel
+    function moveCarousel(index) {
+        const itemWidth = items[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${index * itemWidth}px)`;
+        currentIndex = index;
+    }
+    
+    // Event listeners for buttons
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            moveCarousel(currentIndex - 1);
+        }
+    });
+    
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < items.length - 1) {
+            moveCarousel(currentIndex + 1);
+        }
+    });
+</script>
+<footer class="footer">
+    <div class="footer-logo">
+      <h1>AARHUS</h1>
+      <h1>CONNECT</h1>
+    </div>
+    <div class="footer-links">
+      <a href="#">Mellemfolk</a>
+      <a href="#">Bazar Vest</a>
+      <a href="#">Street Food</a>
+    </div>
+    <div class="footer-contact">
+      <p>OUR CONTACTS:</p>
+      <p>Phone Number: +45 7373902</p>
+      <p>Email: aarhusconnect@gmail.com</p>
+    </div>
+    <div class="footer-button">
+      <button>EXPLORE NOW &#x2191;</button>
+    </div>
+  </footer>
+
+    <script>
+        function toggleMenu() {
+            var overlay = document.getElementById("overlay");
+            overlay.classList.toggle("show");
+        }
+
+        function closeMenu(event) {
+            if (event.target === document.getElementById("overlay")) {
+                document.getElementById("overlay").classList.remove("show");
+            }
+        }
+        document.querySelector('.burger-icon').addEventListener('click', () => {
+    const overlay = document.querySelector('.overlay');
+    overlay.classList.toggle('show');
+});
+    </script>
+    <script>
+        const scrollContainer = document.querySelector('.scroll-container');
+        const scrollAmount = 300; // Amount to scroll per click
+        
+        // Scroll left
+        document.querySelector('.prev').addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+        
+        // Scroll right
+        document.querySelector('.next').addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });</script>
+</body>
+</html>

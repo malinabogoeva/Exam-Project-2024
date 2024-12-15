@@ -1,0 +1,72 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4fbdc; /* Light green background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Info card styling */
+.info-card {
+    display: flex;
+    border: 2px solid #161616;
+    border-radius: 15px;
+    overflow: hidden;
+    max-width: 600px;
+    background-color: #ffe4e6; /* Light pink background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.info-card-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    object-fit: cover;
+}
+
+/* Content styling */
+.info-card-content {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 300px;
+}
+
+.info-card-title {
+    font-family: 'Playfair Display', serif; /* Stylish serif font */
+    font-size: 1.5rem;
+    margin-bottom: 0.5em;
+}
+
+.info-card-text {
+    font-size: 1rem;
+    margin-bottom: 1em;
+    line-height: 1.4;
+}
+
+/* Button styling */
+.info-card-button {
+    font-family: 'Arial', sans-serif;
+    padding: 0.75em 1.5em;
+    font-size: 1rem;
+    color: #161616;
+    background-color: #cce7ff; /* Light blue background */
+    border: 2px solid #161616;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    align-self: flex-start; /* Align button to the left */
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.info-card-button:hover {
+    background-color: #161616;
+    color: #fff;
+}
