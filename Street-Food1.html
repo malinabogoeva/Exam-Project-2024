@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta charset to define the character encoding -->
     <meta charset="UTF-8">
+    <!-- Viewport meta tag to ensure proper scaling on different devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the page -->
     <title>Aarhus Connect</title>
+    <!-- Google Fonts for custom fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400&display=swap" rel="stylesheet">
+    <!-- External stylesheet link -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
+        <!-- Top navigation menu with logo and links -->
         <ol class="top-nav">
             <li class="logo">Aarhus Connect</li>
             <li class="desktop-menu">
-                <a class="nav-link" href="Home.html">Home</a>
+                <!-- Navigation links -->
+                <a class="nav-link" href="index.html">Home</a>
                 <a class="nav-link" href="Bazar-Vest.html">Groceries</a>
                 <a class="nav-link" href="Street-Food1.html">Eat Out</a>
                 <a class="nav-link" href="Mellemfolk1.html">Socialize</a>
@@ -20,9 +27,11 @@
                 <a class="nav-link" href="#">Reviews</a>
             </li>
         </ol>
+        <!-- Overlay for mobile menu -->
         <div class="overlay" id="overlay" onclick="closeMenu(event)">
             <div class="menu" onclick="event.stopPropagation()">
-                <a href="Home.html">Home</a>
+                <!-- Mobile menu links -->
+                <a href="index.html">Home</a>
                 <a href="Bazar-Vest.html">Groceries</a>
                 <a href="Street-Food1.html">Eat Out</a>
                 <a href="Mellemfolk1.html">Socialize</a>
@@ -30,99 +39,107 @@
                 <a href="#">Reviews</a>
             </div>
         </div>
+        <!-- Burger menu icon to toggle mobile menu -->
         <div class="burger-menu" onclick="toggleMenu()">&#9776;</div>
     </header>
+
     <script>
+        // Function to toggle the visibility of the mobile menu
         function toggleMenu() {
             var overlay = document.getElementById("overlay");
             overlay.classList.toggle("show");
         }
 
+        // Function to close the menu when clicking outside of it
         function closeMenu(event) {
             if (event.target === document.getElementById("overlay")) {
                 document.getElementById("overlay").classList.remove("show");
             }
         }
+
+        // Event listener for the burger icon to toggle the overlay
         document.querySelector('.burger-icon').addEventListener('click', () => {
-    const overlay = document.querySelector('.overlay');
-    overlay.classList.toggle('show');
-});
+            const overlay = document.querySelector('.overlay');
+            overlay.classList.toggle('show');
+        });
     </script>
+
   <div class="card-container">
+    <!-- Info card for Street Food -->
     <div class="info-card" style="background-color:#B9E0FE;">
         <div class="info-card-image">
+            <!-- Image for the card -->
             <img src="images/street-food-1.jpg" alt="Bazar Vest">
         </div>
         <div class="info-card-content">
+            <!-- Title and description of the card -->
             <h2 class="info-card-title">Eat out at <br>Street Food</h2>
             <p class="info-card-text">
                 Discover a world of flavors under one roof.
             </p>
+            <!-- Button for viewing on the map -->
             <button class="info-card-button">SEE ON MAP <img src="icons/arrow-sm-right.png" alt="Right Arrow" class="icon right-arrow"></button>
         </div>
     </div>
+
     <section class="carousel-1">
+        <!-- Carousel container for food places -->
         <section class="carousel-container-1">
             <div class="carousel-header-1">
-                <h2 >Places!</h2>
+                <h2>Places!</h2>
                 <div class="carousel-icons-1">
+                    <!-- Left and Right arrow icons for carousel -->
                     <img src="icons/arrow-sm-left.png" alt="Left Arrow" class="icon left-arrow">
                     <img src="icons/arrow-sm-right.png" alt="Right Arrow" class="icon right-arrow">
                 </div>
             </div>
+            <!-- Filter buttons for different categories of food -->
             <div class="filter-buttons">
                 <button class="filter-btn" data-category="all">All</button>
                 <button class="filter-btn" data-category="mexican">Mexican</button>
                 <button class="filter-btn" data-category="American">American</button>
                 <button class="filter-btn" data-category="Asian">Asian</button>
-
             </div>
-            <!-- Carousel content here -->
+            <!-- Carousel content goes here -->
         </section>
         
         <div class="scroll-container-1">
+            <!-- Carousel items for different food categories -->
             <div class="carousel-item-1" data-category="mexican">
-                <div class="carousel-photo" >
+                <div class="carousel-photo">
                     <img src="images/el-camino.jpg" alt="Mexican-Food">
                 </div>
-                    <h3>
-                    El Camino
-                    </h3>
-                    <p>Mexican Food</p>
-                    <p>Mon-Sat: 10:00 AM – 6:00 PM</p>
+                <h3>El Camino</h3>
+                <p>Mexican Food</p>
+                <p>Mon-Sat: 10:00 AM – 6:00 PM</p>
             </div>
-            <div class="carousel-item-1" style="background-color: #FFD866; " data-category="American">
+            <div class="carousel-item-1" style="background-color: #FFD866;" data-category="American">
                 <div class="carousel-photo">
                     <img src="images/BBQ.jpg" alt="BBQ">
                 </div>
-                    <h3>
-                    Smokey BBQ
-                    </h3>
-                    <p>American Food</p>
-                    <p>Mon-Sat: 10:00 AM – 6:00 PM</p>
+                <h3>Smokey BBQ</h3>
+                <p>American Food</p>
+                <p>Mon-Sat: 10:00 AM – 6:00 PM</p>
             </div>
             <div class="carousel-item-1" style="background-color: #B9E0FE;" data-category="Asian">
                 <div class="carousel-photo">
                     <img src="images/tuk-tuk.jpg" alt="Thai food">
                 </div>
-                    <h3>
-                    Tuk-tuk
-                    </h3>
-                    <p>Thai Food</p>
-                    <p>Mon-Sat: 10:00 AM – 6:00 PM</p>
+                <h3>Tuk-tuk</h3>
+                <p>Thai Food</p>
+                <p>Mon-Sat: 10:00 AM – 6:00 PM</p>
             </div>
             <div class="carousel-item-1" style="background-color: #DFF8BD;" data-category="American">
                 <div class="carousel-photo">
                     <img src="images/Bagel.jpg" alt="Bagels">
                 </div>
-                    <h3>
-                    The city bagel
-                    </h3>
-                    <p>American Food</p>
-                    <p>Mon-Sat: 10:00 AM – 6:00 PM</p>
+                <h3>The City Bagel</h3>
+                <p>American Food</p>
+                <p>Mon-Sat: 10:00 AM – 6:00 PM</p>
             </div>
-            <!-- Add more carousel-item divs as needed -->
+            <!-- More carousel items can be added -->
             <script>
+                // Filtering the carousel items based on selected category
                 const filterButtons = document.querySelectorAll('.filter-btn');
                 const carouselItems = document.querySelectorAll('.carousel-item-1');
             
@@ -143,57 +160,68 @@
                 });
             </script>
         </div>
+        <!-- View More button -->
         <div class="button-container">
-        <button class="view-more">VIEW MORE <img src="icons/arrow-sm-right.png" alt="Right Arrow" class="icon right-arrow"></button>
-    </div>
+            <button class="view-more">VIEW MORE <img src="icons/arrow-sm-right.png" alt="Right Arrow" class="icon right-arrow"></button>
+        </div>
     </section>
     </div>
+
     <section class="about-section">
         <h1 class="about-title">About Street Food</h1>
+        <!-- About section text -->
         <p class="about-text">
             Aarhus Street Food is a vibrant culinary hub where international flavors and local delights come together. Located in the heart of the city, this dynamic space offers a variety of food stands serving everything from gourmet burgers and fresh sushi to vegan dishes and decadent desserts. Visitors can enjoy the lively atmosphere, communal seating, and regular live events. It's not just about food—it’s a cultural experience that brings people together to explore, taste, and connect in a unique urban setting.
         </p>
     </section>
+
     <div class="tips-section">
         <h2>Tips!</h2>
+        <!-- Tips section -->
         <p><strong>Plan Your Visit:</strong> Explore Before You Order: Walk around and check all the food stands before deciding. There’s something for every taste!</p>
         <p><strong>Explore the Stalls:</strong> Timing is Key: Visit during off-peak hours for shorter lines, or come in the evening for a lively atmosphere.</p>
         <p><strong>Bring Cash:</strong> Seating Strategy: Find a table before ordering, especially during busy times.</p>
         <p><strong>Try the Food:</strong> Eco-Friendly Practices: Support sustainability by properly sorting your waste into the provided bins.</p>
     </div>
+
     <div class="find-street-food">
-    <h2>Find Street Food</h2>
-    <div class="infocontainer">
-        <div class="infocard address">
-            <p>Ny Banegaardsgaade 46, 8000</p>
+        <h2>Find Street Food</h2>
+        <div class="infocontainer">
+            <div class="infocard address">
+                <p>Ny Banegaardsgaade 46, 8000</p>
+            </div>
+            <div class="infocard phone">
+                <p>+45 86 2542 11</p>
+            </div>
+            <div class="infocard email">
+                <p>aarhusstreetfood@gmail.com</p>
+            </div>
         </div>
-        <div class="infocard phone">
-            <p>+45 86 2542 11</p>
-        </div>
-        <div class="infocard email">
-            <p>aarhusstreetfood@gmail.com</p>
+        <div class="imagecontainer">
+            <!-- Image for location -->
+            <img src="images/street-food-1-Copy.jpg" alt="Street Food">
         </div>
     </div>
-    <div class="imagecontainer">
-        <img src="images/street-food-1-Copy.jpg" alt="Street Food">
-    </div>
-</div>
-        <footer class="footer">
-            <div class="footer-logo">
-              <h1>AARHUS</h1>
-              <h1>CONNECT</h1>
-            </div>
-            <div class="footer-links">
-              <a href="#">Mellemfolk</a>
-              <a href="#">Bazar Vest</a>
-              <a href="#">Street Food</a>
-            </div>
-            <div class="footer-contact">
-              <p>OUR CONTACTS:</p>
-              <p>Phone Number: +45 7373902</p>
-              <p>Email: aarhusconnect@gmail.com</p>
-            </div>
-            <div class="footer-button">
-              <button>EXPLORE NOW &#x2191;</button>
-            </div>
-          </footer>
+
+    <footer class="footer">
+        <!-- Footer section with logo and contact info -->
+        <div class="footer-logo">
+            <h1>AARHUS</h1>
+            <h1>CONNECT</h1>
+        </div>
+        <div class="footer-links">
+            <a href="#">Mellemfolk</a>
+            <a href="#">Bazar Vest</a>
+            <a href="#">Street Food</a>
+        </div>
+        <div class="footer-contact">
+            <p>OUR CONTACTS:</p>
+            <p>Phone Number: +45 7373902</p>
+            <p>Email: aarhusconnect@gmail.com</p>
+        </div>
+        <div class="footer-button">
+            <button>EXPLORE NOW &#x2191;</button>
+        </div>
+    </footer>
+</body>
+</html>
