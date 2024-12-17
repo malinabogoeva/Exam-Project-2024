@@ -327,6 +327,20 @@ line-height: normal;
     padding-bottom: 1em;
     scroll-behavior: smooth; /* Smooth scrolling when users scroll manually */
 }
+
+.scroll-container::-webkit-scrollbar {
+    height: 8px; /* Adjust scrollbar height */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color for the scrollbar thumb */
+    border-radius: 5px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color for the scrollbar track */
+}
+
 .carousel-item {
     border: 2px solid #161616; 
     background-color: #fff;
@@ -404,6 +418,8 @@ line-height: normal;
     max-height: 6em; /* Optional: Limit height for consistent card size */
     overflow: hidden; /* Prevent overflowing text */
     text-overflow: ellipsis; /* Add ellipsis if content overflows */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 }
 
 .reviewer {
@@ -625,6 +641,19 @@ line-height: normal;
     border-radius: 10px;
 }
 
+.scroll-container-1::-webkit-scrollbar {
+    height: 8px; /* Adjust scrollbar height */
+}
+
+.scroll-container-1::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color for the scrollbar thumb */
+    border-radius: 5px;
+}
+
+.scroll-container-1::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color for the scrollbar track */
+}
+
 .carousel-item-1 {
     font-family: 'Body-Font';
     background-color: #ffe4e1; /* Customize based on the category */
@@ -688,6 +717,8 @@ line-height: normal;
     max-height: 6em; /* Optional: Limit height for consistent card size */
     overflow: hidden; /* Prevent overflowing text */
     text-overflow: ellipsis; /* Add ellipsis if content overflows */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 }
 /* Styling for the about section */
 .about-section {
